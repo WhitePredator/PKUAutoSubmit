@@ -155,7 +155,7 @@ def submit(driver):
     time.sleep(TIMESLP)
 
 
-def fill_out(driver, campus, reason, destination, track):
+def fill_out(driver, campus, reason1, destination, track):
     print('开始填报出校备案')
 
     print('选择出校/入校    ', end='')
@@ -213,13 +213,13 @@ def fill_in(driver, campus, reason, habitation, district, street):
     print('入校备案填报完毕！')
 
 
-def run(driver, username, password, campus, reason, destination, track,
+def run(driver, username, password, campus, reason, reason1, destination, track,
         habitation, district, street):
     login(driver, username, password)
     print('=================================')
 
     go_to_application_out(driver)
-    fill_out(driver, campus, reason, destination, track)
+    fill_out(driver, campus, reason1, destination, track)
     print('=================================')
 
     go_to_application_in(driver)
@@ -260,7 +260,7 @@ if __name__ == '__main__':
 
     driver = PhantomJS(executable_path=phantomjs_path)
 
-    run(driver, args.username, args.password, args.campus, args.reason,
+    run(driver, args.username, args.password, args.campus, args.reason, args.reason1,
         args.destination, args.track, args.habitation, args.district,
         args.street)
 
