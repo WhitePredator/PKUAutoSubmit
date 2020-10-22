@@ -116,7 +116,7 @@ def write_reason(driver, reason):
         f'{reason}')
     time.sleep(TIMESLP)
     
- def write_reason(driver, reason1):
+def write_reason(driver, reason1):
     driver.find_element_by_class_name('el-textarea__inner').send_keys(
         f'{reason1}')
     time.sleep(TIMESLP)   
